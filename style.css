@@ -1,0 +1,160 @@
+:root{
+    --white: #f6f5f8;
+    --gray: #232326;
+    --bg: rgb(1, 1, 1);
+    --toolbar-bg: #20202a;
+    --gray-dark: #1c1c1e;
+    --border: #2b2b2f;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    padding: 1rem;
+    background-color: var(--bg);
+}
+*{
+    box-sizing: border-box;
+}
+button{
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button:focus {outline: revert}
+
+header{
+    height: 5rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+    margin: auto;
+    width: 100%;
+    min-width: 17.5rem;
+    max-width: 30rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--border);
+    background-color: var(--gray);
+}
+.navigation_group{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    width: 100%;
+}
+.navigation_group .icon{
+    width: 3rem;
+    height: 3rem;
+    padding: 0.4rem;
+    transition: all 0.2s ease-in-out;
+    border-radius: 50%;
+}
+.navigation_group > button:nth-child(1){
+    margin-right: auto;
+}
+.navigation_group button:hover,
+.navigation_group button:focus{
+    background: var(--border);
+    border-radius: 50%;
+}
+.apps_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile{
+    display: block;
+    width: 2.7rem;
+    height: 2.7rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.dropdown_wrapper{
+    min-width: 12.875rem;
+    padding: 0.75rem;
+    top: 5rem;
+    right: -0.9375rem;
+    position: absolute;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--border);
+    background: var(--gray-dark);
+    gap: 0.25rem;
+    animation: fadeOutAnimation ease-in-out 0.2s forwards;
+}
+.dropdown_wrapper h3{
+    margin: 0;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-align: left;
+    color: var(--white);
+}
+
+.apps_button--wrapper{
+    position: relative;
+}
+.apps-container{
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    max-height: 10rem;
+    background-color: var(--gray);
+}
+.apps-container button i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    
+}
+.apps-container button:hover{
+    border-radius: 50%;
+
+}
+.dropdown_wrapper--fade-in{
+    animation: fadeInAnimation ease-in-out 0.2s forwards;
+}
+.none{
+    display: none;
+}
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOutAnimation ease-in-out 0.2s forwards;
+}
+.app i{
+    padding: 0.375rem;
+    width: 3rem;
+    height: 3rem;
+}
+@keyframes fadeInAnimation {
+    0%{
+        opacity: 0;
+        visibility: hidden;
+        height: 7.5rem;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        height: 12.5rem;
+    }
+}
+@keyframes fadeOutAnimation {
+    0%{
+        opacity: 1;
+        visibility: visible;
+        height: 12.5rem;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        height: 7.5rem;
+    }
+}
